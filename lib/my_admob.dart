@@ -64,15 +64,15 @@ class _MyAdmobState extends State<MyAdmob> {
     _interstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
       onAdShowedFullScreenContent: (InterstitialAd ad) =>
           {print('ad onAdShowedFullScreenContent.')},
-      onAdDismissedFullScreenContent: (InterstitialAd ad) => {
-        print('$ad onAdDismissedFullScreenContent.'),
-        ad.dispose(),
-        _createInterstitialAd(),
+      onAdDismissedFullScreenContent: (InterstitialAd ad) {
+        print('$ad onAdDismissedFullScreenContent.');
+        ad.dispose();
+        _createInterstitialAd();
       },
-      onAdFailedToShowFullScreenContent: (InterstitialAd ad, AdError error) => {
-        print('$ad onAdFailedToShowFullScreenContent: $error'),
-        ad.dispose(),
-        _createInterstitialAd(),
+      onAdFailedToShowFullScreenContent: (InterstitialAd ad, AdError error) {
+        print('$ad onAdFailedToShowFullScreenContent: $error');
+        ad.dispose();
+        _createInterstitialAd();
       },
     );
     _interstitialAd!.show();
