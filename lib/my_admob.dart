@@ -41,7 +41,7 @@ class _MyAdmobState extends State<MyAdmob> {
           print('$ad loaded');
           _interstitialAd = ad;
           _numInterstitialLoadAttempts += 1;
-          _interstitialAd = null;
+          _interstitialAd!.setImmersiveMode(true);
         },
         onAdFailedToLoad: (LoadAdError error) {
           print('InterstitialAd failed to load $error.');
